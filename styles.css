@@ -86,7 +86,7 @@ header div {
     border-radius: 50%;
     display: flex;
     padding: 4px;
-    transition: transform .3;
+    transition: transform .3s;
     animation: fromTop .4s backwards;
     animation-delay: .2s;
 }
@@ -205,7 +205,7 @@ section ul {
 
 /* Aplicando transições nas imagens da lista */
 li {
-    transition: transform .3;
+    transition: transform .3s;
 }
 
 
