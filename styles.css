@@ -1,0 +1,269 @@
+/* Tirar tudo que o navegador aplica automaticamente. 
+- 1º Zerando a margem e o preenchimento das caixas.
+- 2º Border-Box apra considerar somente os 580px .
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Tirar os pontinhos de lista
+- 1º list-style: none na ul
+
+*/
+
+
+ul {
+    list-style: none;
+}
+
+
+/* O primeiro a se fazer será colocar uma tag <link> no HTML para linkar o CSS.]
+
+- 1º Fundo da imagem, Figma->Lending->Fundo->Exportar 1.5x.
+- 2º Aplicar a imagem no background com body.
+- 3º Centralizar a imagem no topo.
+- 4º Fazer com que a imagems e adapte com o tamanho da tela, background-size 100% (horizontal) auto (vert).
+- 5º Tirar a repetiçaõ da tela de fundo usando background-repeat.
+- 6º Colocar a cor do final da imagem para o resto da pagina com background-color.
+*/
+
+
+body {
+    background-image: url(./Assets/Fundo.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+
+
+/* Aplicando fontes. 
+- 1º Selecionar as fontes escolhidas no fonts.google.com.
+- 2º Copiar informações de código.
+- 3º Colar no Head do arquivo index.html.
+- 4º Agora é necessário utilizar as fontes no CSS.
+- 5º Pegar todos os elementos do body e aplicar uma font-family.
+- 6º Determinar a altura da linah para todos os elementos do body.
+*/
+
+
+body * {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 160%;
+}
+
+/* Configurando o texto do header no centro 
+- 2º Aplicando uma margen top para ter um espaço acima da imagem
+- 3º Definir uma altura para não bugar ao carregar a pag
+*/
+
+header {
+    margin-top: 32px;
+    height: calc(120px + 32px);
+}
+
+/* Configurando a borda da foto de cabeçalho 
+- 1º largura
+- 2º margin auto para centralizar a imagem
+- 3º aplicando cor para a borda
+- 4º arredondamento
+- 5º alterando a visualização para alinhar os componentes
+- Aplicando uma transição para o hover
+- 7º Colocando a animação ja feita
+- 8º Aplicando um delay para animação
+- 9º puxar as propriedades para não ficar estranho
+*/
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #C91842 0%, #5CC2E2 100%);
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+    transition: transform .3;
+    animation: fromTop .4s backwards;
+    animation-delay: .2s;
+}
+
+/* Aplicando transições 
+- Hover = Ao passar o mouse em cima a escala vai de 1 para 1.1*/
+
+header div:hover {
+    transform: scale(1.1);
+}
+
+/* Configurando a imagem do header 
+- 1º Ajustando a largura
+- 2º Colocando um arredondamento de borda 
+*/
+
+header img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+/* Deixar o header de lado e mexer nos cartões.
+- 1º Alterar a largura dos cartões com max-width.
+- 2º Dizer para o cartão ocupar só 90% da tela.
+- 3º Centralizar o main com margin, quando possui 2 valores o 1 identifica em cima e em baixo o 2 eh as laterais.
+- 4º Colocar um espaçamento de uma caixa para a outra de 24px usando
+display grid com gap
+*/
+
+
+main {
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto;
+    display: grid;
+    gap: 24px;
+}
+
+
+/* Mudando a cor da fonte para branco. 
+- 2º Aplicando a borda colorida aqui.
+- 3º Background-image: linear gradient
+- 4º Define a Angulação e depois as cores do gradiente
+- 5º Aplicar um preenchimento em cima do card para ficar como se fosse uma borda
+- 6º Aplicando a animação
+*/
+
+
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #C91842 0%, #5CC2E2 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+    animation: toTop .4s backwards;
+}
+
+section:nth-child(1) {
+    animation-delay: .2;
+}
+
+section:nth-child(2) {
+    animation-delay: .4s;
+}
+
+section:nth-child(3) {
+    animation-delay: .8s;
+}
+
+/* Configurando o cartãozinho cinza
+- 1º Aplciar uma cor com background color
+- 2º Desgrudar os elementos utilizando um preenchimento interno
+- 3º padding para mudar todas as direções e padding top para mudar em cima
+- 4º Aplicar po arredondamento de borda 
+
+*/
+
+section div {
+    background-color: #262629;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+
+
+
+/* Mencionando o h2 para configurar a fonte mais a fundo, 
+como o peso que já inserimos no HTML, tamanho e etc...
+- 1º Font-weight = peso.
+- 2º Font-size e letter-spaccing.
+- 3º Neste caso não tem nenhuma.
+*/
+
+/* Terminar de configurar a fonte do texto do parágrafo.
+*/
+
+section p {
+    letter-spacing: -0.18px;
+    color: #C1C1C1;
+}
+
+/* O display se refere a visualização do elemento sugerido 
+- 1º Aplicaremos um display para as caixas da lista ul 
+- 2º Precisamos aplicar um espaço entre as caixas de 16px (gap)
+- 3º Aplicar uma margem no topo das listas não ordenadas.
+- 4º Flex: wrap serve para caso haja mais filmes na lista eles se ajeitarem na tela
+*/
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+/* Aplicando transições nas imagens da lista */
+li {
+    transition: transform .3;
+}
+
+
+li:hover {
+    transform: scale(1.1);
+}
+
+
+/* Aplicando a borda e tamanho nas imagens do primeiro card 
+- 1º Se referir a class movies-list
+mais borda
+*/
+
+.Movies-list img {
+    border-radius: 8px;
+    width: 100px;
+    border: 1px solid #555555;
+}
+
+/* Aplicando borda e tamanho nas imagens do segundo card 
+- 1º Se referir a series-list img
+mais borda
+*/
+
+.Series-list img {
+    width: 100px;
+    border-radius: 8px;
+    border: 1px solid #555555;
+}
+
+
+/* ANIMAÇÃO 
+1- Definir a animação com @kayframes
+2- Dar um nome
+3- Eixo Y = Vertical
+
+*/
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes toTop {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
