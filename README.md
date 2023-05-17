@@ -1,4 +1,4 @@
-# NLW eSports
+# Filmes preferidos
 
 ![preview](./.github/preview.png)
 
